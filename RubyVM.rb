@@ -1,6 +1,6 @@
 class Computer
   @@users = {}
-  
+
   def initialize(username, password)
     @username = username
     @password = password
@@ -14,11 +14,11 @@ class Computer
     puts "File created at #{time} with the name #{filename}"
   end
 
-  def Computer.get_users
+  def self.get_users
     @@users
   end
 end
 
-my_computer = Computer.new("Kevin", "85072")
+my_computer = Computer.new('Kevin', '85072')
 
-my_computer.create("That one place.")
+my_computer.create('That one place.')

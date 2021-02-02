@@ -24,5 +24,4 @@ def decihper(string, shift)
   string.chars.map { |c| encrypter.fetch(c, c) }
 end
 
-
-p decihper("Bmfy f xywnsl!", 5).join
+p decihper('Bmfy f xywnsl!', 5).join
