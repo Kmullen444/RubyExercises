@@ -3,26 +3,30 @@
 # The method should return false otherwise. For example coprime?(25, 12) is true because
 # 1 is the only number that divides both 25 and 12.
 
-def coprime?(num_1, num_2)
-  factors_1 = factors(num_1)
-  factors_2 = factors(num_2)
+# def coprime?(num_1, num_2)
+#   factors_1 = factors(num_1)
+#   factors_2 = factors(num_2)
   
-  count = factors_1.select { |num| factors_2.include?(num)}
+#   count = factors_1.select { |num| factors_2.include?(num)}
 
-  if count.length > 1
-    return false
-  end
-  true
-end
+#   if count.length > 1
+#     return false
+#   end
+#   true
+# end
 
 
-def factors(num)
-  factors = (1..num).select do |divisor|
-    if num % divisor == 0 
-      divisor
-    end
-  end
-  factors
+# def factors(num)
+#   factors = (1..num).select do |divisor|
+#     if num % divisor == 0 
+#       divisor
+#     end
+#   end
+#   factors
+# end
+
+def coprime?(num_1, num_2)
+(2..num_1).none?{ |divisor| num_1 % divisor == 0 && num_2 % divisor == 0}
 end
 
 
