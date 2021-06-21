@@ -3,7 +3,7 @@ def select_even_nums(arr)
 end
 
 def reject_puppies(arr)
-  arr.reject { |hash| hash["age"] < 3}
+  arr.reject { |hash| hash["age"] <= 2}
 end
 
 def count_positive_subarrays(arr)
