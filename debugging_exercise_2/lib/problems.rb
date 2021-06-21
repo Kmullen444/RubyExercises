@@ -6,6 +6,10 @@ def largest_prime_factor(num)
   large_prime = factors.reverse.select { |i| return i if prime?(i)}
 end
 
+def largest_prime_factor(num)
+  num.downto(2) { |factor| return factor if num % factor == 0 && prime?(num)}
+end
+
 def prime?(num)
   (2...num).each do |i|
     if num % i == 0
@@ -20,6 +24,16 @@ def unique_chars?(word)
   chars = Hash.new(0)
   word.each_char { |char| chars[char] += 1}
   unique = chars.each_value { |v| return false if v > 1}
+  true
+end
+
+def unique_chars?(word)
+  seen = []
+
+  word.each_char do |char|
+    return false if seen.include?(char)
+    seen << char
+  end
   true
 end
 
@@ -40,9 +54,14 @@ def dupe_indices(array)
   indices
 end
 
+def dupe_indices(arr)
+  indices = Hash.new { |h,k| h[k] = []}
+  arr.each_with_index { |ele, i| indices[ele] << i}
+  indices.select { |ele, arr|  arr.length > 1}
+end
+
 def ana_array(arr_1, arr_2)
-  return false if hash_maker(arr_1) != hash_maker(arr_2)
-  true
+  hash_maker(arr_1) == hash_maker(arr_2)
 end
 
 def hash_maker(arr)
