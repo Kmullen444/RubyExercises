@@ -12,3 +12,17 @@ def substring(string, arr)
 end
 
 substring('below', dictionary)
+
+
+def substring(string, arr)
+  count = Hash.new(0)
+
+  string.each_char.with_index do |char, i|
+    arr.each do |word|
+      count[word] += 1 if string[i..-1] == word
+    end
+  end
+  count
+end
+
+p substring("below", dictionary)
