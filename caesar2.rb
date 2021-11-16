@@ -14,6 +14,7 @@ end
 
 
 puts caesar_chiper("apple", 1)
+puts caesar_chiper("testing", 14)
 puts caesar_chiper("bootcamp", 2)
 puts caesar_chiper("zebra", 4)
 
